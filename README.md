@@ -1,13 +1,4 @@
 # snow_2026
-Ran command: `python3 magadan_climate.py`
-Ran command: `python3 -c "from meteostat import Point, daily; import datetime; magadan = Point(59.5667, 150.8000, 70); start = datetime.datetime(2020, 1, 1); end = datetime.datetime(2023, 12, 31); d = daily(magadan, start, end).fetch(); print(type(d), d.head())"`
-Ran command: `python3 -c "from meteostat import daily; import datetime; start = datetime.datetime(2020, 1, 1); end = datetime.datetime(2023, 12, 31); d = daily('25913', start, end).fetch(); print(d.head())"`
-Edited magadan_climate.py
-Ran command: `python3 magadan_climate.py`
-Edited magadan_climate.py
-Ran command: `python3 magadan_climate.py`
-
-Я исследовал ваш запрос и подготовил решение. 
 
 Пакет **`climatol`** в R является стандартом для контроля качества (QC), заполнения пропусков и гомогенизации климатических данных. В экосистеме Python нет одного пакета, который бы полностью его копировал, но тот же рабочий процесс обычно реализуется комбинацией следующих библиотек:
 
@@ -16,8 +7,8 @@ Ran command: `python3 magadan_climate.py`
 3. **`pyhomogeneity`** — выполняет тесты на однородность временных рядов (homogenization testing), например, тест Петтитта (Pettitt's test), тест Снидерса (SNHT) или тест Бюишанда, чтобы находить "точки излома" (breakpoints) в климатических данных, вызванные сменой оборудования или переносом станций.
 4. **`xclim`** — дополнительная мощная библиотека для расчета климатических индексов и проверки качества данных.
 
-### Я написал скрипт для анализа климата Магадана
-Я создал скрипт по пути `/Users/esteebarin/snow_2026/magadan_climate.py`. 
+### скрипт для анализа климата Магадана
+
 Скрипт автоматически:
 1. Скачивает ежедневные данные по температуре и осадкам для **Магадана** (используется WMO ID станции `25913`) за последние 30 лет (1993–2023).
 2. Анализирует пропуски в данных (нашел 370 пропущенных дней с осадками) и выполняет их заполнение.
